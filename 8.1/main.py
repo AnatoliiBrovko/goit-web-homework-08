@@ -7,7 +7,7 @@ def find_author(name):
         quotes = Quote.objects(author=auth)
         print(f"{name}'s quotes:")
         for quote in quotes:
-            print((quote.quote).encode('windows-1251').decode('utf-8'))
+            print((quote.quote))
     else:
         print(f"'{name}' is not defined.")
 
@@ -16,7 +16,7 @@ def find_tag(tag):
     quotes = Quote.objects(tags=tag)
     print(f"Quotes were found for the tag '{tag}':")
     for quote in quotes:
-        print((quote.quote).encode('windows-1251').decode('utf-8'))
+        print((quote.quote))
 
 
 def find_tags(tags):
@@ -24,7 +24,7 @@ def find_tags(tags):
     quotes = Quote.objects(tags__in=tag_list)
     print(f"Quotes were found for the tags '{tags}':")
     for quote in quotes:
-        print((quote.quote).encode('windows-1251').decode('utf-8'))
+        print((quote.quote))
 
 
 def parse_inputs():
